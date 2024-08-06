@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModsenAPI", "ModsenAPI.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "..\IdentityServer\IdentityServer.csproj", "{3E0C9CE7-3137-4142-82AC-87D01A1BC214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsenAPITests", "..\ModsenAPITests\ModsenAPITests.csproj", "{A81D7F3C-FDDB-4721-B47E-3E77BC592B94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModsenAPITests", "..\ModsenAPITests\ModsenAPITests.csproj", "{A81D7F3C-FDDB-4721-B47E-3E77BC592B94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C452E097-28FF-4F8F-A7DC-10B688D123CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer1", "IdentityServer1", "{FE3EAEE9-3C89-469E-80F4-31AAEB3478C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E0C9CE7-3137-4142-82AC-87D01A1BC214} = {FE3EAEE9-3C89-469E-80F4-31AAEB3478C3}
+		{A81D7F3C-FDDB-4721-B47E-3E77BC592B94} = {C452E097-28FF-4F8F-A7DC-10B688D123CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {938D3708-CB63-4FA0-AAA9-5BDABE461BED}

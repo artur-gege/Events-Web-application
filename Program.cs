@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using ModsenAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using ModsenAPI.Repositories.Interfaces;
