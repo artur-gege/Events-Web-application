@@ -1,17 +1,18 @@
-using ModsenAPI.Data;
 using Microsoft.EntityFrameworkCore;
-using ModsenAPI.Repositories.Interfaces;
-using ModsenAPI.Repositories.Implementations;
-using ModsenAPI.Services.Interfaces;
-using ModsenAPI.Services.Implementations;
-using ModsenAPI.UnitOfWorks;
-using ModsenAPI.AutoMappers;
-using ModsenAPI.Validators;
 using FluentValidation;
-using ModsenAPI.ModelsDTO;
-using ModsenAPI.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using ModsenAPI.Application.Repositories.Implementations;
+using ModsenAPI.Application.Repositories.Interfaces;
+using ModsenAPI.Application.UseCases.Implementations;
+using ModsenAPI.Application.UseCases.Interfaces;
+using ModsenAPI.Application.UnitOfWorks;
+using ModsenAPI.Infrastructure.Data;
+using ModsenAPI.Application.Services.Implementations;
+using ModsenAPI.Domain.ModelsDTO.ParticipantDTO;
+using ModsenAPI.Domain.ModelsDTO.EventDTO;
+using ModsenAPI.Application.MappingProfiles;
+using ModsenAPI.Application.Validators;
+using ModsenAPI.Infrastructure.Middleware;
 
 namespace ModsenAPI
 {
@@ -28,8 +29,8 @@ namespace ModsenAPI
             });
 
             //validators
-            builder.Services.AddScoped<IValidator<EventDto>, EventValidator>();
-            builder.Services.AddScoped<IValidator<ParticipantDto>, ParticipantValidator>();
+            builder.Services.AddScoped<IValidator<EventRequestDto>, EventValidator>();
+            builder.Services.AddScoped<IValidator<ParticipantRequestDto>, ParticipantValidator>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -57,8 +58,8 @@ namespace ModsenAPI
             
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             
-            builder.Services.AddScoped<IEventService, EventService>();
-            builder.Services.AddScoped<IParticipantService, ParticipantService>();
+            builder.Services.AddScoped<IEventUseCase, EventUseCase>();
+            builder.Services.AddScoped<IParticipantUseCase, ParticipantUseCase>();
 
 
             var app = builder.Build();
