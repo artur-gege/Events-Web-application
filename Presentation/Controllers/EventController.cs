@@ -1,11 +1,5 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using ModsenAPI.Application.Validators;
-using FluentValidation;
-using Microsoft.AspNetCore.Authorization;
-using ModsenAPI.Domain.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using ModsenAPI.Application.UseCases.Interfaces;
-using ModsenAPI.Domain.ModelsDTO;
 using ModsenAPI.Domain.ModelsDTO.EventDTO;
 using ModsenAPI.Infrastructure.Pagination;
 

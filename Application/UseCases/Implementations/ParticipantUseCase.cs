@@ -2,10 +2,8 @@
 using ModsenAPI.Application.UnitOfWorks;
 using ModsenAPI.Application.UseCases.Interfaces;
 using ModsenAPI.Domain.ModelsDTO.ParticipantDTO;
-using ModsenAPI.Application.Validators;
 using AutoMapper;
 using FluentValidation;
-using ModsenAPI.Domain.ModelsDTO.EventDTO;
 using ModsenAPI.Application.CustomExceptions;
 
 namespace ModsenAPI.Application.Services.Implementations

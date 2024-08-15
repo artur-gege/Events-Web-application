@@ -1,12 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using ModsenAPI.Application.Validators;
-using FluentValidation;
-using ModsenAPI.Domain.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using ModsenAPI.Application.UseCases.Interfaces;
 using ModsenAPI.Domain.ModelsDTO.ParticipantDTO;
-using ModsenAPI.Application.UseCases.Implementations;
-using ModsenAPI.Application.MappingProfiles;
 
 namespace ModsenAPI.Presentation.Controllers
 {
