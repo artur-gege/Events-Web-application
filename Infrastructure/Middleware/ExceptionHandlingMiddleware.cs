@@ -40,11 +40,6 @@ namespace ModsenAPI.Infrastructure.Middleware
                 context.Response.StatusCode = 400;
                 await context.Response.WriteAsync(ex.Message);
             }
-            catch
-            {
-                context.Response.StatusCode = 500;
-                await context.Response.WriteAsync("Произошла ошибка на сервере");
-            }
         }
 
         private Task HandleExceptionAsync(HttpContext context, Exception ex)
