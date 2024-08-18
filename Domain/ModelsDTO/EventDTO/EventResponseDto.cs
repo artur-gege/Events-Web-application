@@ -24,5 +24,9 @@ namespace ModsenAPI.Domain.ModelsDTO.EventDTO
             MaxParticipants = eventEntity.MaxParticipants;
             ImageUrl = eventEntity.ImageUrl;
         }
+        public EventResponseDto()
+        {
+
+        }
     }
 }
