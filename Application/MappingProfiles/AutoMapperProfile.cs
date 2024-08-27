@@ -2,6 +2,7 @@
 using ModsenAPI.Domain.Models;
 using ModsenAPI.Domain.ModelsDTO.ParticipantDTO;
 using ModsenAPI.Domain.ModelsDTO.EventDTO;
+using ModsenAPI.Domain.ModelsDTO.UserDTO;
 
 namespace ModsenAPI.Application.MappingProfiles
 {
@@ -14,6 +15,10 @@ namespace ModsenAPI.Application.MappingProfiles
 
             CreateMap<ParticipantRequestDto, Participant>().ReverseMap();
             CreateMap<ParticipantResponseDto, Participant>().ReverseMap();
+
+            CreateMap<UserRegisterRequestDto, User>().ReverseMap();
+            CreateMap<UserLoginRequestDto, User>().ReverseMap();
+            CreateMap<UserResponseDto, User>().ReverseMap();
         }
     }
 }

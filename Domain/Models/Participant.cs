@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ModsenAPI.Domain.Models
+﻿namespace ModsenAPI.Domain.Models
 {
     // убрал data annotations в доменной модели
     public class Participant

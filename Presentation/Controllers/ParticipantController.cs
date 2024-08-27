@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ModsenAPI.Application.UseCases.Interfaces;
 using ModsenAPI.Domain.ModelsDTO.ParticipantDTO;
 
@@ -6,6 +7,7 @@ namespace ModsenAPI.Presentation.Controllers
 {
     [ApiController]
     [Route("api")]
+    [Authorize]
     public class ParticipantController : ControllerBase
     {
         private readonly IParticipantUseCase _participantUseCase;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ModsenAPI.Application.UseCases.Interfaces;
 using ModsenAPI.Domain.ModelsDTO.EventDTO;
 using ModsenAPI.Infrastructure.Pagination;
@@ -7,10 +8,10 @@ namespace ModsenAPI.Presentation.Controllers
 {
     [ApiController]
     [Route("api")]
+    [Authorize]
     public class EventController : ControllerBase
     {
         private readonly IEventUseCase _eventUseCase;
-
         public EventController(IEventUseCase eventUseCase)
         {
             _eventUseCase = eventUseCase;
@@ -43,7 +44,7 @@ namespace ModsenAPI.Presentation.Controllers
         {
             var _event = await _eventUseCase.GetEventByIdAsync(id);
             return Ok(_event);
-        }
+        }   
 
         [HttpGet]
         [Route("events/name/{name}")]
@@ -55,6 +56,7 @@ namespace ModsenAPI.Presentation.Controllers
 
         [HttpPost]
         [Route("events")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> CreateEventAsync([FromBody] EventRequestDto newEvent)
         {
             var createdEvent = await _eventUseCase.CreateEventAsync(newEvent);
@@ -63,6 +65,7 @@ namespace ModsenAPI.Presentation.Controllers
 
         [HttpPut]
         [Route("events/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> UpdateEventAsync(int id, [FromBody] EventRequestDto EventDto)
         {
             var updatedEvent = await _eventUseCase.UpdateEventAsync(id, EventDto);
@@ -71,6 +74,7 @@ namespace ModsenAPI.Presentation.Controllers
 
         [HttpDelete]
         [Route("events/{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> DeleteEventAsync(int id)
         {
             await _eventUseCase.DeleteEventAsync(id);
@@ -88,6 +92,7 @@ namespace ModsenAPI.Presentation.Controllers
 
         [HttpPut]
         [Route("events/{id}/image")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> UpdateImageUrlAsync(int id, string imageUrl)
         {
             var updatedEvent = await _eventUseCase.UpdateImageUrlAsync(id, imageUrl);
